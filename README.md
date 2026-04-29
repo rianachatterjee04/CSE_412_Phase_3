@@ -1,6 +1,6 @@
-# Restaurant App (Minimal Version)
+# Restaurant App 
 
-Super simplified structure with one main code file.
+Restaurant interface representing customers, menu, reservations, payments, and all types of components needed to have a successful restaurant. Our flow directly represents the ER diagrams and SQL queries/tables created in Phase 1 and Phase 2.
 
 ## Files
 

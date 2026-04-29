@@ -75,7 +75,6 @@ The application behavior maps to the required SQL categories:
   - Mark payment status from pending to paid
 - **DELETE**
   - Reservation delete behavior is represented in the project workflow from Phase 2 logic
-  - (In this minimal version, the UI is focused on create/list/update flows for demo clarity)
 
 ### ER Diagram (From Phase 2)
 

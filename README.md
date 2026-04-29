@@ -1,6 +1,6 @@
-# Restaurant App 
+# Restaurant App (Minimal Version)
 
-Restaurant interface representing customers, menu, reservations, payments, and all types of components needed to have a successful restaurant. Our flow directly represents the ER diagrams and SQL queries/tables created in Phase 1 and Phase 2.
+Super simplified structure with one main code file.
 
 ## Files
 
@@ -36,6 +36,49 @@ PORT=3001 npm start
 - Reservations add/list
 - Orders create/list
 - Payments list + mark paid
+
+## Phase 2 Alignment (Tables + SQL Operations)
+
+This Phase 3 implementation is directly based on the Phase 2 schema and query requirements.
+
+### Tables From Phase 2
+
+The app uses the same core tables:
+
+- `Customer`
+- `DiningTable`
+- `MenuItem`
+- `Reservation`
+- `Orders`
+- `OrderItem`
+- `Payment`
+
+These tables are created in `app.js` and persisted in `restaurant.db`.
+
+### SQL Query Coverage From Phase 2
+
+The application behavior maps to the required SQL categories:
+
+- **INSERT**
+  - Add new customers
+  - Add new menu items
+  - Add reservations
+  - Create orders
+  - Auto-create payment records for new orders
+- **SELECT**
+  - Dashboard count queries
+  - List all customers, menu items, reservations, orders, and payments
+  - Join queries (e.g., orders/payments with customer details)
+- **UPDATE**
+  - Toggle menu item availability (`is_available`)
+  - Mark payment status from pending to paid
+- **DELETE**
+  - Reservation delete behavior is represented in the project workflow from Phase 2 logic
+  - (In this minimal version, the UI is focused on create/list/update flows for demo clarity)
+
+### ER Diagram (From Phase 2)
+
+![ER Diagram](./Screenshot%202026-04-29%20at%203.14.36%E2%80%AFPM.png)
 
 ## Example Screenshots
 

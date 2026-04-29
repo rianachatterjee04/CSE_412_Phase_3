@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <%- include("partials/nav") %>
+    <main>
+      <section class="dashboard-hero">
+        <h1>Phase 3 Demo Dashboard</h1>
+      </section>
+      <section class="dashboard-image card">
+        <img src="/new_restaurant.avif" alt="Restaurant front scene" />
+      </section>
+      <section class="stats-grid">
+        <a href="/customers" class="stat-link"><article class="stat-card"><h3>Customers</h3><p><%= stats.customers %></p></article></a>
+        <a href="/tables" class="stat-link"><article class="stat-card"><h3>Dining Tables</h3><p><%= stats.tables %></p></article></a>
+        <a href="/menu" class="stat-link"><article class="stat-card"><h3>Menu Items</h3><p><%= stats.menuItems %></p></article></a>
+        <a href="/reservations" class="stat-link"><article class="stat-card"><h3>Reservations</h3><p><%= stats.reservations %></p></article></a>
+        <a href="/orders" class="stat-link"><article class="stat-card"><h3>Orders</h3><p><%= stats.orders %></p></article></a>
+        <a href="/payments" class="stat-link"><article class="stat-card"><h3>Payments</h3><p><%= stats.payments %></p></article></a>
+      </section>
+    </main>
+  </body>
+</html>

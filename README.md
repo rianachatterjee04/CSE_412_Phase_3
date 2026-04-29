@@ -36,3 +36,13 @@ PORT=3001 npm start
 - Reservations add/list
 - Orders create/list
 - Payments list + mark paid
+
+## Example Screenshots
+
+Dashboard example:
+
+![Dashboard example](./Screenshot%202026-04-29%20at%203.09.04%E2%80%AFPM.png)
+
+Menu/usage example:
+
+![Usage example](./Screenshot%202026-04-29%20at%203.09.10%E2%80%AFPM.png)

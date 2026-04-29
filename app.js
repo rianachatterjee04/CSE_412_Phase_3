@@ -67,6 +67,20 @@ function initDb() {
     db.prepare("INSERT INTO Customer (first_name,last_name,phone_number,email) VALUES (?,?,?,?)")
       .run("Maria", "Lopez", "520-456-2234", "marialovessushi@gmail.com");
   }
+  const customerSeed = [
+    ["Maria", "Lopez", "520-456-2234", "marialovessushi@gmail.com"],
+    ["Ava", "Johnson", "520-300-1101", "ava.johnson@example.com"],
+    ["Noah", "Kim", "520-300-1102", "noah.kim@example.com"],
+    ["Liam", "Patel", "520-300-1103", "liam.patel@example.com"],
+    ["Emma", "Rivera", "520-300-1104", "emma.rivera@example.com"],
+    ["Sophia", "Nguyen", "520-300-1105", "sophia.nguyen@example.com"]
+  ];
+  const customerExists = db.prepare("SELECT 1 FROM Customer WHERE email = ? LIMIT 1");
+  const addCustomer = db.prepare("INSERT INTO Customer (first_name,last_name,phone_number,email) VALUES (?,?,?,?)");
+  for (const customer of customerSeed) {
+    if (!customerExists.get(customer[3])) addCustomer.run(...customer);
+  }
+
   if (db.prepare("SELECT COUNT(*) c FROM DiningTable").get().c === 0) {
     db.prepare("INSERT INTO DiningTable (table_number,capacity) VALUES (1,2),(2,4),(3,6)").run();
   }
@@ -78,6 +92,22 @@ function initDb() {
       ('Pizza with Vodka Sauce','Signature pizza',21.99,1),
       ('Miso Soup','Classic miso broth',5.99,1)
     `).run();
+  }
+  const menuSeed = [
+    ["Grilled Sushi", "Chef special grilled sushi rolls", 14.99, 1],
+    ["Pizza with Vodka Sauce", "Signature pizza", 21.99, 1],
+    ["Miso Soup", "Classic miso broth", 5.99, 1],
+    ["Spicy Tuna Roll", "Tuna, chili mayo, cucumber", 12.49, 1],
+    ["Chicken Alfredo Pasta", "Creamy alfredo with grilled chicken", 16.99, 1],
+    ["Margherita Pizza", "Fresh basil, mozzarella, tomato sauce", 15.5, 1],
+    ["Beef Ramen", "Rich broth with slow-cooked beef", 13.75, 1],
+    ["Caesar Salad", "Romaine, parmesan, croutons", 8.25, 1],
+    ["Chocolate Lava Cake", "Warm cake with melted center", 7.5, 1]
+  ];
+  const menuExists = db.prepare("SELECT 1 FROM MenuItem WHERE name = ? LIMIT 1");
+  const addMenuItem = db.prepare("INSERT INTO MenuItem (name,description,price,is_available) VALUES (?,?,?,?)");
+  for (const item of menuSeed) {
+    if (!menuExists.get(item[0])) addMenuItem.run(...item);
   }
 }
 

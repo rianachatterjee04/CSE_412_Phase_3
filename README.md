@@ -1,6 +1,7 @@
-# Restaurant App (Minimal Version)
+# Restaurant App - Phase 3 Repository
 
-Super simplified structure with one main code file.
+This repository contains Phase 3 of our restaurant web application project and directly represents the Phase 1 requirements and Phase 2 database work.  
+It provides a working interface connected to the database design, including entity management, operational workflows, and query-backed functionality for demonstration.
 
 ## Files
 
@@ -78,7 +79,7 @@ The application behavior maps to the required SQL categories:
 
 ### ER Diagram (From Phase 2)
 
-![ER Diagram](./Screenshot%202026-04-29%20at%203.14.36%E2%80%AFPM.png)
+![ER Diagram](./ER_Diagram.png)
 
 ## Example Screenshots
 
